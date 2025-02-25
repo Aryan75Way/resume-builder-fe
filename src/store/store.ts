@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import authReducer from "./reducers/authReducer";
+import resumeReducer from './reducers/resumeReducer';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
+    resume: resumeReducer,
   },
 });
 
