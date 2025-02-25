@@ -11,7 +11,7 @@ export const exportPDF = async (templateId:string) => {
   const element = document.getElementById(templateId);
   if (!element) return;
 
-  const canvas = await html2canvas(element, { scale: 2 });
+  const canvas = await html2canvas(element, { scale: 1 });
   const imgData = canvas.toDataURL("image/png");
 
   const pdf = new jsPDF("p", "mm", "a4");

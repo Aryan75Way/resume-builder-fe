@@ -1,6 +1,7 @@
 import { exportPDF } from "@/lib/utils";
 import { useAppSelector } from "@/store/store";
 import markdownit from "markdown-it";
+import { Button } from "../ui/button";
 
 const md = markdownit();
 const FirstTemplate = () => {
@@ -8,14 +9,19 @@ const FirstTemplate = () => {
 
   if (resume.name)
     return (
-      <>
-        <div id="template1" className="max-w-4xl mx-auto p-6 bg-white rounded-md">
+      <div className="relative">
+        <div
+          id="template1"
+          className="max-w-4xl mx-auto p-6 bg-white rounded-md text-sm"
+        >
           <h1 className="text-2xl font-bold text-center">{resume.name}</h1>
           <p className="text-center">{resume.address}</p>
-          <p className="text-center">
-            {resume.email} | {resume.contact}
-          </p>
-          <p className="text-center">
+          {resume.email && (
+            <p className="text-center">
+              {resume.email} | {resume.contact}
+            </p>
+          )}
+          {resume.linkedin && <p className="text-center">
             <a
               href={resume.linkedin}
               target="_blank"
@@ -33,7 +39,7 @@ const FirstTemplate = () => {
             >
               {resume?.github}
             </a>
-          </p>
+          </p>}
 
           <section className="mt-6">
             <h2 className="text-xl font-semibold">Education</h2>
@@ -82,13 +88,13 @@ const FirstTemplate = () => {
             </ul>
           </section>
         </div>
-        <button
+        <Button
           onClick={() => exportPDF("template1")}
-          className="mt-4 bg-blue-500 text-white p-2 rounded"
+          className=" p-2 rounded absolute bottom-2 right-2"
         >
           Download PDF
-        </button>
-      </>
+        </Button>
+      </div>
     );
 
   return (

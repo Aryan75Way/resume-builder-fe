@@ -4,7 +4,7 @@ import SecondTemplate from "./templates/SecondTemplate";
 
 const ResumePreview = () => {
   return (
-    <Tabs defaultValue="Template1" className="w-full">
+    <Tabs defaultValue="Template1" className="w-full h-full">
       <TabsList className="w-full bg-white/80">
         <TabsTrigger value="Template1" className="w-full">
           Template 1
@@ -13,10 +13,10 @@ const ResumePreview = () => {
           Template 2
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="Template1">
+      <TabsContent value="Template1" className="h-full">
         <FirstTemplate />
       </TabsContent>
-      <TabsContent value="Template2">
+      <TabsContent value="Template2" className="h-full">
         <SecondTemplate />
       </TabsContent>
     </Tabs>

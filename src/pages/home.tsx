@@ -19,7 +19,7 @@ export default function Home() {
     return (
       <div className="h-full">
         <div className="h-full p-2 overflow-y-auto flex gap-5 justify-between items-start bg-sky-100">
-          <div className="w-full h-full overflow-y-scroll bg-white p-2 pb-20"><ResumeForm/></div>
+          <div className="w-full h-full overflow-y-scroll bg-white p-2 sm:pb-10 pd-20 rounded-lg"><ResumeForm/></div>
           <div className="w-full h-full max-sm:hidden"><ResumePreview/></div>
         </div>
 
