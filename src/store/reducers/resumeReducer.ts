@@ -1,37 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface EducationType {
-  degree: string;
-  venue: string;
-  grade: number;
-  duration: string;
-}
-
-interface ExperienceType {
-  org: string;
-  details: string[];
-  duration: string;
-}
-
-interface ProjectType {
-  title: string;
-  technologies_used: string;
-  details: string[];
-}
-
-interface ResumeState {
+export interface ResumeState {
   name: string;
   address: string;
   email: string;
   linkedin: string;
   github: string;
   contact: string;
-  education: EducationType[];
+  education: string;
   languages: string[];
   frameworks_tools: string[];
   subjects: string[];
-  experience: ExperienceType[];
-  projects: ProjectType[];
+  experience: string;
+  projects: string;
   achievements: string[];
 }
 
@@ -43,12 +24,12 @@ const initialState: ResumeState = {
   linkedin: "",
   github: "",
   contact: "",
-  education: [],
+  education: "",
   languages: [],
   frameworks_tools: [],
   subjects: [],
-  experience: [],
-  projects: [],
+  projects: "",
+  experience: "",
   achievements: []
 };
 
@@ -59,9 +40,12 @@ export const resumeSlice = createSlice({
     clearAll: () => {
       return initialState;
     },
+    updateResume: (state, action: PayloadAction<Partial<ResumeState>>) => {
+      return { ...state, ...action.payload };
+    },
   },
 });
 
-export const { clearAll } = resumeSlice.actions;
+export const { clearAll, updateResume } = resumeSlice.actions;
 
 export default resumeSlice.reducer;

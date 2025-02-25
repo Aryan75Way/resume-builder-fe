@@ -6,7 +6,7 @@ import resumeReducer from './reducers/resumeReducer';
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    resume: resumeReducer,
+    resume: resumeReducer
   },
 });
 
