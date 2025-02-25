@@ -11,7 +11,7 @@ const Navbar = () => {
         dispatch(logout());
     }
   return (
-    <div className="border-b border-gray-200 h-[8%] flex justify-between items-center px-4">
+    <div className="border-b border-gray-200 h-full flex justify-between items-center px-4">
         <Link to="/">
         <img src="/vite.svg" alt="logo" className="h-6 w-6" />
         </Link>

@@ -16,8 +16,8 @@ export default function RootLayout() {
   if (isLoggedIn)
     return (
       <div className="h-screen">
-        <Navbar/>
-        <div className="h-full">
+        <div className="h-[8%]"><Navbar/></div>
+        <div className="h-[92%]">
         <Outlet />  
         </div>
       </div>
